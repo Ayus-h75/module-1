@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Prep Domain Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .form-container {
+            width: 800px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .form-container h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .form-container label {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #fff;
+        }
+        .option:hover {
+            background-color: #f5f5f5;
+        }
+        .option.selected {
+            border-color: #007bff;
+            background-color: #eef;
+        }
+        .option span {
+            font-size: 14px;
+            font-weight: bold;
+            color: #555;
+            background-color: #f1f1f1;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .submit-btn {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .submit-btn:hover {
+            background-color: #444;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #007bff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <span class="back-btn">&larr; Back</span>
+        <h1>Choose which domain under Test Prep? *</h1>
+        <div class="options-grid">
+            <div class="option"><span>A</span> UPSC</div>
+            <div class="option"><span>B</span> CAT</div>
+            <div class="option"><span>C</span> CA</div>
+            <div class="option"><span>D</span> SSC</div>
+            <div class="option"><span>E</span> GMAT</div>
+            <div class="option"><span>F</span> GATE</div>
+            <div class="option"><span>G</span> IIT-JEE</div>
+            <div class="option"><span>H</span> NEET</div>
+            <div class="option"><span>I</span> Banking</div>
+            <div class="option"><span>J</span> UGC NET</div>
+            <div class="option"><span>K</span> CLAT</div>
+            <div class="option"><span>L</span> State Level Exam</div>
+        </div>
+        <button class="submit-btn">Next →</button>
+    </div>
+    <script>
+        // JavaScript for handling selection and submission
+        const options = document.querySelectorAll('.option');
+        const submitButton = document.querySelector('.submit-btn');
+
+        // Array to store selected options
+        let selectedOptions = [];
+
+        // Add click event to each option
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                // Toggle the 'selected' class
+                option.classList.toggle('selected');
+
+                const optionText = option.textContent.trim();
+                
+                // Add/remove from selected options array
+                if (selectedOptions.includes(optionText)) {
+                    selectedOptions = selectedOptions.filter(opt => opt !== optionText);
+                } else {
+                    selectedOptions.push(optionText);
+                }
+            });
+        });
+
+        // Handle submit button click
+        submitButton.addEventListener('click', () => {
+            if (selectedOptions.length > 0) {
+                alert(`You selected: ${selectedOptions.join(', ')}`);
+            } else {
+                alert('Please select at least one option.');
+            }
+        });
+    </script>
+</body>
+</html>

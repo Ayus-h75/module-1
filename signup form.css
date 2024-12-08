@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learnyst Signup Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        .form-container {
+            width: 360px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .form-container img {
+            width: 40px;
+        }
+        .form-container h1 {
+            font-size: 20px;
+            margin: 20px 0 10px;
+        }
+        .form-container p {
+            color: #666;
+            margin: 0 0 20px;
+            font-size: 14px;
+        }
+        .form-container button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .form-container button img {
+            width: 20px;
+            margin-right: 8px;
+        }
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .form-container input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        .form-container a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .form-container .terms {
+            font-size: 12px;
+            color: #666;
+            margin: 10px 0;
+        }
+        .form-container .terms a {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <img src="https://via.placeholder.com/40x40?text=L" alt="Learnyst Logo">
+        <h1>Start your 14-day free trial</h1>
+        <p>No credit card required</p>
+        <button>
+            <img src="https://via.placeholder.com/20x20?text=G" alt="Google Logo">
+        
+        </button>
+        <form>
+            <input type="email" placeholder="Enter your email" required>
+            <input type="password" placeholder="Enter a password" required>
+            <button type="submit" style="background-color: #007bff; color: white;">CONTINUE</button>
+        </form>
+        <p class="terms">
+            By signing up, you acknowledge that you have read, understood, and agree to Learnyst's 
+            <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+        </p>
+        <p>
+            Already have an account? <a href="#">Log in</a>
+        </p>
+    </div>
+</body>
+</html>
